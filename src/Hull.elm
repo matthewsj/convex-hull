@@ -2,8 +2,8 @@ module Hull exposing (findHull)
 
 import List
 import List.Extra
-
 import Polygon exposing (..)
+
 
 type Turn
     = Left
@@ -117,13 +117,17 @@ findHull points =
     else
         case minimumWith (compareField getY |> breakTiesWith (compareField getX)) points of
             Nothing ->
-                Nothing 
+                Nothing
 
             Just minPoint ->
                 List.Extra.remove minPoint points
                     |> List.sortWith (compareField (angle minPoint) |> breakTiesWith (compareField getY))
                     |> List.foldl addPointToHull [ minPoint ]
-                    |> \hull -> if List.length hull > 2 then Just hull else Nothing
+                    |> \hull ->
+                        if List.length hull > 2 then
+                            Just hull
+                        else
+                            Nothing
 
 
 angle : Point -> Point -> Float

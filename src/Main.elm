@@ -9,7 +9,7 @@ import Svg.Attributes as SA
 import Svg.Events as SE
 import List
 import Hull exposing (..)
-import Polygon exposing (..) 
+import Polygon exposing (..)
 
 
 main : Program Never Model Msg

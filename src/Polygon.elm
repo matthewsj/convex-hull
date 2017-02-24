@@ -56,10 +56,11 @@ last xs =
             last xs
 
 
-    {-
-pointInPolygon : Point -> Polygon -> Bool
-pointInPolygon point polygon =
-    let edgeList = edges polygon
-                   candidates = List.filter (\(p1, p2) -> 
-    in
+
+{-
+   pointInPolygon : Point -> Polygon -> Bool
+   pointInPolygon point polygon =
+       let edgeList = edges polygon
+                      candidates = List.filter (\(p1, p2) ->
+       in
 -}
